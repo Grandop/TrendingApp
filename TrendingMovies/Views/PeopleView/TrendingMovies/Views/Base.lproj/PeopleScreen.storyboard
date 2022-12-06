@@ -106,7 +106,7 @@
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1L-fG-b5u">
-                                                            <rect key="frame" x="316" y="66" width="26" height="29"/>
+                                                            <rect key="frame" x="331.66666666666669" y="66" width="10.333333333333314" height="29"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="29" id="pip-eV-ZQt"/>
                                                             </constraints>
@@ -121,7 +121,7 @@
                                                         <constraint firstAttribute="trailing" secondItem="U1L-fG-b5u" secondAttribute="trailing" constant="8" id="Fcp-v0-9XI"/>
                                                         <constraint firstItem="tn7-8r-Sre" firstAttribute="leading" secondItem="6SA-aF-xh0" secondAttribute="trailing" constant="14" id="Gvp-jJ-xa2"/>
                                                         <constraint firstItem="U1L-fG-b5u" firstAttribute="top" secondItem="66u-0k-LwH" secondAttribute="top" constant="66" id="Te3-a1-O9n"/>
-                                                        <constraint firstItem="U1L-fG-b5u" firstAttribute="leading" secondItem="biN-9c-Hep" secondAttribute="trailing" constant="74.329999999999998" id="YSy-Jx-9uw"/>
+                                                        <constraint firstItem="U1L-fG-b5u" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="biN-9c-Hep" secondAttribute="trailing" symbolic="YES" id="YSy-Jx-9uw"/>
                                                         <constraint firstItem="biN-9c-Hep" firstAttribute="top" secondItem="ph2-xQ-T2B" secondAttribute="bottom" constant="8" id="b79-DW-tnW"/>
                                                         <constraint firstItem="biN-9c-Hep" firstAttribute="leading" secondItem="6SA-aF-xh0" secondAttribute="trailing" constant="14" id="crT-Rn-Sxi"/>
                                                         <constraint firstItem="ph2-xQ-T2B" firstAttribute="leading" secondItem="66u-0k-LwH" secondAttribute="leading" constant="124" id="daw-MQ-wNH"/>
@@ -153,18 +153,41 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zh4-Zz-hmJ">
+                                <rect key="frame" x="116" y="358" width="158" height="128"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="yqE-WJ-3sR">
+                                        <rect key="frame" x="69" y="54" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="S4M-Q9-HWH"/>
+                                            <constraint firstAttribute="height" constant="20" id="bx2-Co-UGk"/>
+                                        </constraints>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.83981188057229916" green="1" blue="0.85079963870482533" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="158" id="4q6-vs-pmt"/>
+                                    <constraint firstItem="yqE-WJ-3sR" firstAttribute="centerY" secondItem="zh4-Zz-hmJ" secondAttribute="centerY" id="JIa-Y2-qOw"/>
+                                    <constraint firstAttribute="height" constant="128" id="YO0-mq-eED"/>
+                                    <constraint firstItem="yqE-WJ-3sR" firstAttribute="centerX" secondItem="zh4-Zz-hmJ" secondAttribute="centerX" id="pwc-j0-Lu7"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xZO-vB-TEl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="x2x-bP-7UV" firstAttribute="top" secondItem="sTq-5U-KUq" secondAttribute="top" id="F5w-7X-HQP"/>
                             <constraint firstAttribute="trailing" secondItem="x2x-bP-7UV" secondAttribute="trailing" id="JII-sM-4p6"/>
+                            <constraint firstItem="zh4-Zz-hmJ" firstAttribute="centerX" secondItem="sTq-5U-KUq" secondAttribute="centerX" id="VoP-UY-WMK"/>
                             <constraint firstAttribute="bottom" secondItem="x2x-bP-7UV" secondAttribute="bottom" id="g1P-3r-pW1"/>
                             <constraint firstItem="x2x-bP-7UV" firstAttribute="leading" secondItem="sTq-5U-KUq" secondAttribute="leading" id="pWh-f2-o0m"/>
+                            <constraint firstItem="zh4-Zz-hmJ" firstAttribute="centerY" secondItem="sTq-5U-KUq" secondAttribute="centerY" id="sJR-PC-0jf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4U5-CY-xGz"/>
                     <connections>
+                        <outlet property="loaderIndicator" destination="yqE-WJ-3sR" id="HFQ-KM-poq"/>
+                        <outlet property="loadingView" destination="zh4-Zz-hmJ" id="88P-6Z-qk9"/>
                         <outlet property="peopleTableView" destination="x2x-bP-7UV" id="P2m-Ld-RYZ"/>
                     </connections>
                 </viewController>

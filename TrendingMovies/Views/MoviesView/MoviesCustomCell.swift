@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol MoviesCustomCellDelegate {
+    func stopLoader()
+}
+
 class MoviesCustomCell: UITableViewCell {
 
     @IBOutlet weak var background: UIView!
@@ -16,14 +20,17 @@ class MoviesCustomCell: UITableViewCell {
     @IBOutlet weak var voteAverage: UILabel!
     @IBOutlet weak var voteCount: UILabel!
     @IBOutlet weak var filmInformation: UILabel!
-
+    @IBOutlet weak var imageLoader: UIActivityIndicatorView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         background.layer.cornerRadius = 15
         filmImage.layer.cornerRadius = 12
+        UIImageView.imageDelegate = self
     }
 
     func configCell(movie: Movies) {
+        imageLoader.showLoading()
         filmImage.loadFrom(UrlAddress: movie.imageURL)
         filmName.text = movie.title
         releaseDate.text = movie.formatReleaseDateMovies()
@@ -32,4 +39,11 @@ class MoviesCustomCell: UITableViewCell {
         filmInformation.text = movie.overview
     }
 
+}
+
+extension MoviesCustomCell: MoviesCustomCellDelegate {
+    func stopLoader() {
+        imageLoader.stopLoading()
+    }
+    
 }

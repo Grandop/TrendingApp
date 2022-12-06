@@ -39,6 +39,7 @@
 		F6713D19293E601400AFC510 /* MovieScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6713D17293E601400AFC510 /* MovieScreen.storyboard */; };
 		F6713D1B293E603900AFC510 /* TvShowsScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6713D1A293E603900AFC510 /* TvShowsScreen.storyboard */; };
 		F6713D1E293E606D00AFC510 /* PeopleScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6713D1C293E606D00AFC510 /* PeopleScreen.storyboard */; };
+		F67B25EC293FC10700DE2CFC /* ExtensionLoaderIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67B25EB293FC10700DE2CFC /* ExtensionLoaderIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		F6713D18293E601400AFC510 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = TrendingMovies/Views/Base.lproj/MovieScreen.storyboard; sourceTree = "<group>"; };
 		F6713D1A293E603900AFC510 /* TvShowsScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TvShowsScreen.storyboard; sourceTree = "<group>"; };
 		F6713D1D293E606D00AFC510 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = TrendingMovies/Views/Base.lproj/PeopleScreen.storyboard; sourceTree = "<group>"; };
+		F67B25EB293FC10700DE2CFC /* ExtensionLoaderIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionLoaderIndicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +236,7 @@
 				F63C85D2293D35B1001BC869 /* TvShowsView */,
 				F63C85D6293D3F98001BC869 /* PeopleView */,
 				F63D619C293A5F360017E99D /* Main.storyboard */,
+				F67B25EB293FC10700DE2CFC /* ExtensionLoaderIndicator.swift */,
 				F6713D15293E5D0200AFC510 /* ExtensionUiImage.swift */,
 			);
 			path = Views;
@@ -338,6 +341,7 @@
 				F63D61B2293A653F0017E99D /* MoviesBrain.swift in Sources */,
 				F63C85CD293D2ECE001BC869 /* TvShowsBrain.swift in Sources */,
 				F63D6199293A5F360017E99D /* SceneDelegate.swift in Sources */,
+				F67B25EC293FC10700DE2CFC /* ExtensionLoaderIndicator.swift in Sources */,
 				F63C85F1293D7B20001BC869 /* PeopleBrain.swift in Sources */,
 				F63D61B0293A64B70017E99D /* MovieResults.swift in Sources */,
 				F63D61B4293A6D250017E99D /* MoviesExtensions.swift in Sources */,

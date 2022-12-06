@@ -16,6 +16,7 @@ class PeopleCustomCell: UITableViewCell {
     @IBOutlet weak var department: UILabel!
     @IBOutlet weak var popularity: UILabel!
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         background.layer.cornerRadius = 15
@@ -23,8 +24,8 @@ class PeopleCustomCell: UITableViewCell {
     }
     
     func configPeopleCell(people: People) {
-        if people.profilePath == nil || people.profilePath == "" {
-            profileActor.image = UIImage(named: "person.fill")
+        if people.profilePath == nil {
+            profileActor.image = UIImage(systemName: "person.fill")
         } else {
             profileActor.loadFrom(UrlAddress: people.peopleImageURL)
         }

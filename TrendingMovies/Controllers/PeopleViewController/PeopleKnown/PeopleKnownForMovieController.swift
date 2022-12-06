@@ -10,7 +10,7 @@ import UIKit
 class PeopleKnownForMovieController: UIViewController{
     
     @IBOutlet weak var peopleKnownForTableView: UITableView!
-    
+
     var knownForInfo: [KnownForInfo] = []
     
     override func viewDidLoad() {
@@ -18,7 +18,6 @@ class PeopleKnownForMovieController: UIViewController{
         self.title = "Known For"
         peopleKnownForTableView.dataSource = self
     }
-
     
 }
 // MARK: UITableViewDataSource

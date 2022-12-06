@@ -28,6 +28,7 @@ extension PeopleController: UITableViewDataSource {
 extension PeopleController: PeopleBrainDelegate {
     func peopleRequestSuccess(peopleData: PeopleResult?) {
         DispatchQueue.main.async {
+            self.hideLoading()
             self.people = peopleData?.results ?? []
             self.peopleTableView.reloadData()
         }
@@ -35,7 +36,7 @@ extension PeopleController: PeopleBrainDelegate {
     
     func peopleRequestFail(error: Error) {
         DispatchQueue.main.async {
-            
+            self.hideLoading()
         }
     }
 }

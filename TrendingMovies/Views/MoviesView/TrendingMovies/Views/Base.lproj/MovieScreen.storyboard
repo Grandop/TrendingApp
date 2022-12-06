@@ -147,13 +147,18 @@
                                                                 <constraint firstAttribute="height" constant="1" id="NST-qi-y64"/>
                                                             </constraints>
                                                         </view>
+                                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="1Lr-7J-Yje">
+                                                            <rect key="frame" x="75" y="116" width="20" height="20"/>
+                                                        </activityIndicatorView>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.0" green="0.61874936856121365" blue="0.98525506258010864" alpha="0.27509312913907286" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="ZmT-8z-11t" secondAttribute="trailing" constant="74.329999999999998" id="1Ve-XZ-Cyf"/>
                                                         <constraint firstAttribute="trailing" secondItem="X7r-zM-Fpf" secondAttribute="trailing" constant="21" id="5ZH-bp-zGA"/>
+                                                        <constraint firstItem="wm4-f2-a6S" firstAttribute="top" secondItem="1Lr-7J-Yje" secondAttribute="bottom" constant="113" id="9Ne-iz-Y8R"/>
                                                         <constraint firstAttribute="trailing" secondItem="wm4-f2-a6S" secondAttribute="trailing" constant="16" id="CaR-MV-14w"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="350" id="Hdp-ZY-09V"/>
+                                                        <constraint firstItem="1Lr-7J-Yje" firstAttribute="leading" secondItem="s3Y-np-oCr" secondAttribute="leading" constant="75" id="IvO-8X-mZW"/>
                                                         <constraint firstItem="TA7-ve-lIq" firstAttribute="top" secondItem="s3Y-np-oCr" secondAttribute="top" constant="18" id="Iyi-na-KzB"/>
                                                         <constraint firstItem="X7r-zM-Fpf" firstAttribute="top" secondItem="TA7-ve-lIq" secondAttribute="top" id="J2G-qF-97X"/>
                                                         <constraint firstItem="wm4-f2-a6S" firstAttribute="top" secondItem="TA7-ve-lIq" secondAttribute="bottom" constant="15" id="N0E-ti-pbK"/>
@@ -169,7 +174,9 @@
                                                         <constraint firstItem="B24-oH-7JZ" firstAttribute="leading" secondItem="s3Y-np-oCr" secondAttribute="leading" constant="158" id="ndR-A7-UDX"/>
                                                         <constraint firstItem="ZmT-8z-11t" firstAttribute="top" secondItem="B24-oH-7JZ" secondAttribute="bottom" constant="10" id="oaz-Qo-9RS"/>
                                                         <constraint firstItem="X7r-zM-Fpf" firstAttribute="leading" secondItem="TA7-ve-lIq" secondAttribute="trailing" constant="4" id="rtr-X7-ZBz"/>
+                                                        <constraint firstItem="1Lr-7J-Yje" firstAttribute="top" secondItem="s3Y-np-oCr" secondAttribute="top" constant="116" id="wV1-th-lze"/>
                                                         <constraint firstAttribute="trailing" secondItem="B24-oH-7JZ" secondAttribute="trailing" constant="21" id="yiT-aE-ZLg"/>
+                                                        <constraint firstItem="ZmT-8z-11t" firstAttribute="leading" secondItem="1Lr-7J-Yje" secondAttribute="trailing" constant="63" id="zkM-tf-RaP"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -185,6 +192,7 @@
                                             <outlet property="filmImage" destination="TA7-ve-lIq" id="NtE-AI-rhc"/>
                                             <outlet property="filmInformation" destination="wm4-f2-a6S" id="h3Z-Pf-aAm"/>
                                             <outlet property="filmName" destination="X7r-zM-Fpf" id="6BB-UD-len"/>
+                                            <outlet property="imageLoader" destination="1Lr-7J-Yje" id="YHN-mJ-9eK"/>
                                             <outlet property="releaseDate" destination="LfJ-0K-GCO" id="UrY-fx-l9x"/>
                                             <outlet property="voteAverage" destination="pEA-dv-RnI" id="gbj-u9-2XI"/>
                                             <outlet property="voteCount" destination="VpP-1x-DpU" id="ci8-Hf-dm2"/>
@@ -192,24 +200,47 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="72k-Es-KSW">
+                                <rect key="frame" x="122.66666666666669" y="358" width="145" height="128"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="GnH-SA-AAL">
+                                        <rect key="frame" x="62.333333333333329" y="54" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="heH-AP-QOl"/>
+                                            <constraint firstAttribute="width" constant="20" id="rF6-Im-MUW"/>
+                                        </constraints>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.75094074047863246" green="0.9017890214636668" blue="0.96611279249191284" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="145" id="Jbk-HZ-PFy"/>
+                                    <constraint firstItem="GnH-SA-AAL" firstAttribute="centerY" secondItem="72k-Es-KSW" secondAttribute="centerY" id="VSb-Og-RF7"/>
+                                    <constraint firstAttribute="height" constant="128" id="gs9-P7-9eC"/>
+                                    <constraint firstItem="GnH-SA-AAL" firstAttribute="centerX" secondItem="72k-Es-KSW" secondAttribute="centerX" id="loK-qn-sAa"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="5LA-BY-pkn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="37G-05-rsX"/>
                             <constraint firstItem="5LA-BY-pkn" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="AIY-2j-BgN"/>
+                            <constraint firstItem="72k-Es-KSW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="L55-WJ-dnX"/>
                             <constraint firstAttribute="bottom" secondItem="5LA-BY-pkn" secondAttribute="bottom" id="fcS-gX-yW6"/>
+                            <constraint firstItem="72k-Es-KSW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fu8-nW-ZUC"/>
                             <constraint firstAttribute="trailing" secondItem="5LA-BY-pkn" secondAttribute="trailing" id="k0m-iQ-Tpt"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Hm3-PU-1S2"/>
                     <connections>
+                        <outlet property="loaderIndicator" destination="GnH-SA-AAL" id="fHC-p1-Kc2"/>
+                        <outlet property="loadingView" destination="72k-Es-KSW" id="wcY-Gd-IKZ"/>
                         <outlet property="moviesTableView" destination="5LA-BY-pkn" id="eos-E2-3uh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1889" y="-852"/>
+            <point key="canvasLocation" x="1887.6923076923076" y="-852.36966824644549"/>
         </scene>
         <!--Movies-->
         <scene sceneID="mlc-Sp-Rjq">

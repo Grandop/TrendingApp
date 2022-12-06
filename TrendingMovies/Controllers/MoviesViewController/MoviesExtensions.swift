@@ -21,6 +21,7 @@ extension MoviesController: UITableViewDataSource{
         
         cell.configCell(movie: movies[indexPath.row])
         
+        
         return cell
         
     }
@@ -32,6 +33,7 @@ extension MoviesController: UITableViewDataSource{
 extension MoviesController: MovieBrainDelegate {
     func movieRequestSuccess(movieData: MovieResults?) {
         DispatchQueue.main.async {
+            self.hideLoading()
             self.movies = movieData?.results ?? []
             self.moviesTableView.reloadData()
             
@@ -40,7 +42,7 @@ extension MoviesController: MovieBrainDelegate {
 
     func movieRequestFail(error: Error) {
         DispatchQueue.main.async {
-            
+            self.hideLoading()
         }
     }
 

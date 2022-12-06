@@ -30,6 +30,7 @@ extension TvShowsController: UITableViewDataSource {
 extension TvShowsController: TvShowsBrainDelegate {
     func tvShowRequestSuccess(tvShowData: TvShowsResult?) {
         DispatchQueue.main.async {
+            self.hideLoading()
             self.tvShows = tvShowData!.results
             self.tvShowsTableView.reloadData()
         }
@@ -37,7 +38,7 @@ extension TvShowsController: TvShowsBrainDelegate {
     
     func tvShowRequestFail(error: Error) {
         DispatchQueue.main.async {
-            
+            self.hideLoading()
         }
     }
     
