@@ -17,6 +17,8 @@ class PeopleKnownForMovieCell: UITableViewCell {
     @IBOutlet weak var voteCountLabel: UILabel!
     @IBOutlet weak var movieOverview: UILabel!
     
+    @IBOutlet weak var imageLoader: UIActivityIndicatorView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         background.layer.cornerRadius = 15
@@ -24,7 +26,10 @@ class PeopleKnownForMovieCell: UITableViewCell {
     }
     
     func configPeopleKnownForMovie(knownFor: KnownForInfo) {
-        moviePoster.loadFrom(UrlAddress: knownFor.knownForMovieImgUrl)
+        imageLoader.startAnimating()
+        moviePoster.loadFrom(UrlAddress: knownFor.knownForMovieImgUrl, completionHandler: {
+            self.imageLoader.stopAnimating()
+        })
         movieName.text = knownFor.title
         releaseDate.text = knownFor.formatReleaseDateKnownFor()
         voteAverageLabel.text = String(knownFor.voteAverage ?? 0.0)

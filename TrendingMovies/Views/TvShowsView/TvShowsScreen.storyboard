@@ -246,7 +246,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vuC-OP-ImM" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" tag="1" title="TV Shows" id="Mmq-Zw-4t8">
-                        <imageReference key="image" image="tv" catalog="system" symbolScale="large" renderingMode="hierarchical"/>
+                        <imageReference key="image" image="tv" catalog="system" symbolScale="large"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="9UH-Jy-A24">

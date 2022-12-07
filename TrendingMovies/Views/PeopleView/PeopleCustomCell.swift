@@ -26,7 +26,9 @@ class PeopleCustomCell: UITableViewCell {
         if people.profilePath == nil {
             profileActor.image = UIImage(systemName: "person.fill")
         } else {
-            profileActor.loadFrom(UrlAddress: people.peopleImageURL)
+            profileActor.loadFrom(UrlAddress: people.peopleImageURL, completionHandler: {
+                
+            })
         }
         actorName.text = people.name
         department.text = people.knownForDepartment.uppercased()

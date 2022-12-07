@@ -10,10 +10,7 @@ import UIKit
 
 extension UIImageView {
     
-    static var imageDelegateMovie: MoviesCustomCellDelegate?
-    static var imageDelegateTvShow: TvShowCustomCellDelegate?
-    
-    func loadFrom(UrlAddress: String) {
+    func loadFrom(UrlAddress: String, completionHandler: @escaping() -> Void)   {
         guard let url = URL(string: UrlAddress) else {return}
         
         DispatchQueue.global().async {
@@ -22,8 +19,7 @@ extension UIImageView {
                 if let imageData = imageData {
                     if let loadedImage = UIImage(data: imageData) {
                         self?.image = loadedImage
-                        
-                        UIImageView.imageDelegateMovie?.stopLoader()
+                        completionHandler()
                     }
                 }
             }

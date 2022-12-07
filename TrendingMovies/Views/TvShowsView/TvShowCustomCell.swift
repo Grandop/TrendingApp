@@ -29,8 +29,10 @@ class TvShowCustomCell: UITableViewCell {
     }
 
     func tvShowConfigCell(tvShow: TvShows) {
-        imageLoaderIndicator.showLoadingLarge()
-        tvShowPoster.loadFrom(UrlAddress: tvShow.tvShowImageURL)
+        imageLoaderIndicator.startAnimating()
+        tvShowPoster.loadFrom(UrlAddress: tvShow.tvShowImageURL, completionHandler: {
+            self.imageLoaderIndicator.stopAnimating()
+        })
         tvShowName.text = tvShow.name
         releaseDateTvShow.text = tvShow.formatReleaseDateTvShows()
         voteAverageLabel.text = String(tvShow.voteAverage)
@@ -41,8 +43,3 @@ class TvShowCustomCell: UITableViewCell {
 
 }
 
-extension TvShowCustomCell: MoviesCustomCellDelegate {
-    func stopLoader() {
-        imageLoaderIndicator.stopLoading()
-    }
-}

@@ -14,22 +14,23 @@ class TabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewControllers?[initialIndex].tabBarController?.tabBar.tintColor = #colorLiteral(red: 0.5919482112, green: 0.8929846287, blue: 0.9768673778, alpha: 1)
         selectedIndex = initialIndex
     }
-//    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-//        if item.tag == 0 {
-//            item.image?.withTintColor(.green)
-//        } else if item.tag == 1 {
-//            item.image?.withTintColor(.purple)
-//        }
-//    }
-//
-//    override func tabBar(_ tabBar: UITabBar, didBeginCustomizing items: [UITabBarItem]) {
-//        for item in items {
-//            if item.tag == 0 {
-//                item.image?.withTintColor(.green)
-//            }
-//        }
-//    }
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        let index =  tabBar.items?.firstIndex(of: item) ?? 0
+        
+        switch index {
+        case 0:
+            viewControllers?[index].tabBarController?.tabBar.tintColor = #colorLiteral(red: 0.5919482112, green: 0.8929846287, blue: 0.9768673778, alpha: 1)
+        case 1:
+            viewControllers?[index].tabBarController?.tabBar.tintColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
+        case 2:
+            viewControllers?[index].tabBarController?.tabBar.tintColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
+        default:
+            print("..")
+        }
+        
+    }
     
 }
