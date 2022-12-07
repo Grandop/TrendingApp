@@ -10,10 +10,9 @@
         <scene sceneID="WwR-VN-hQe">
             <objects>
                 <tabBarController id="KJm-9C-ZqT" customClass="TabBarController" customModule="TrendingMovies" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="baS-1i-JaG">
+                    <tabBar key="tabBar" opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="baS-1i-JaG">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="initialIndex">
@@ -21,6 +20,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
+                        <outlet property="TabBar" destination="baS-1i-JaG" id="yce-Qp-z27"/>
                         <segue destination="grg-uI-351" kind="relationship" relationship="viewControllers" id="CFr-RZ-Dft"/>
                         <segue destination="ygx-GX-lKb" kind="relationship" relationship="viewControllers" id="esA-2p-Sw6"/>
                         <segue destination="cIy-ld-lfG" kind="relationship" relationship="viewControllers" id="VW3-MX-DBj"/>
@@ -34,7 +34,7 @@
         <scene sceneID="jOI-IA-ax4">
             <objects>
                 <viewControllerPlaceholder storyboardName="MovieScreen" id="grg-uI-351" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="mak-JP-LWJ"/>
+                    <tabBarItem key="tabBarItem" title="" id="mak-JP-LWJ"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e0s-qK-ibz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -44,7 +44,7 @@
         <scene sceneID="LK5-HM-dwV">
             <objects>
                 <viewControllerPlaceholder storyboardName="TvShowsScreen" id="ygx-GX-lKb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="COp-6U-uBd"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="" id="COp-6U-uBd"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eEP-lT-c6K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -54,7 +54,7 @@
         <scene sceneID="3ek-FU-g8M">
             <objects>
                 <viewControllerPlaceholder storyboardName="PeopleScreen" id="cIy-ld-lfG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="H5R-ph-hzV"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="" id="H5R-ph-hzV"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rhy-WH-mBH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

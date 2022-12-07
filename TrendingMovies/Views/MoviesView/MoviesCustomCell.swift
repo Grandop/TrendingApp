@@ -22,16 +22,20 @@ class MoviesCustomCell: UITableViewCell {
     @IBOutlet weak var filmInformation: UILabel!
     @IBOutlet weak var imageLoader: UIActivityIndicatorView!
     
+    var imageLoaderDelegate: MoviesCustomCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         background.layer.cornerRadius = 15
         filmImage.layer.cornerRadius = 12
-        UIImageView.imageDelegate = self
+        
+        UIImageView.imageDelegateMovie = self
     }
 
     func configCell(movie: Movies) {
-        imageLoader.showLoading()
+        imageLoader.showLoadingLarge()
         filmImage.loadFrom(UrlAddress: movie.imageURL)
+//        imageLoader.stopLoading()
         filmName.text = movie.title
         releaseDate.text = movie.formatReleaseDateMovies()
         voteAverage.text = String(movie.voteAverage)

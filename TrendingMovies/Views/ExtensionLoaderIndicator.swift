@@ -11,7 +11,7 @@ import UIKit
 extension UIActivityIndicatorView {
     static let loaderTag = 1938123987
     
-    func showLoading(style: UIActivityIndicatorView.Style = .large) {
+    func showLoadingLarge(style: UIActivityIndicatorView.Style = .large) {
         var loading = viewWithTag(UIActivityIndicatorView.loaderTag) as? UIActivityIndicatorView
         if loading == nil {
             loading = UIActivityIndicatorView(style: style)

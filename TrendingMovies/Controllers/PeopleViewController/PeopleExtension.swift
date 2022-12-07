@@ -46,13 +46,16 @@ extension PeopleController: PeopleBrainDelegate {
 extension PeopleController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let peopleKnownForMovieStoryBoard: UIStoryboard = UIStoryboard(name: "peopleKnownForMovie", bundle: nil) 
-        
-        let peopleKnownForMovieController = peopleKnownForMovieStoryBoard.instantiateViewController(withIdentifier: "KnownForPeople") as! PeopleKnownForMovieController
-        
-        peopleKnownForMovieController.knownForInfo = people[indexPath.row].knownFor
-
-        self.navigationController?.pushViewController(peopleKnownForMovieController, animated: true)
+        if people[indexPath.row].knownFor.count != 0 {
+            
+            let peopleKnownForMovieStoryBoard: UIStoryboard = UIStoryboard(name: "peopleKnownForMovie", bundle: nil)
+            
+            let peopleKnownForMovieController = peopleKnownForMovieStoryBoard.instantiateViewController(withIdentifier: "KnownForPeople") as! PeopleKnownForMovieController
+            
+            peopleKnownForMovieController.knownForInfo = people[indexPath.row].knownFor
+            
+            self.navigationController?.pushViewController(peopleKnownForMovieController, animated: true)
+        }
         
     }
 }

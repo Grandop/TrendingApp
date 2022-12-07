@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol TvShowCustomCellDelegate {
+    func stopLoader()
+}
+
 class TvShowCustomCell: UITableViewCell {
 
     @IBOutlet weak var background: UIView!
@@ -16,6 +20,7 @@ class TvShowCustomCell: UITableViewCell {
     @IBOutlet weak var voteAverageLabel: UILabel!
     @IBOutlet weak var voteCountLabel: UILabel!
     @IBOutlet weak var tvShowOverview: UILabel!
+    @IBOutlet weak var imageLoaderIndicator: UIActivityIndicatorView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,6 +29,7 @@ class TvShowCustomCell: UITableViewCell {
     }
 
     func tvShowConfigCell(tvShow: TvShows) {
+        imageLoaderIndicator.showLoadingLarge()
         tvShowPoster.loadFrom(UrlAddress: tvShow.tvShowImageURL)
         tvShowName.text = tvShow.name
         releaseDateTvShow.text = tvShow.formatReleaseDateTvShows()
@@ -31,5 +37,12 @@ class TvShowCustomCell: UITableViewCell {
         voteCountLabel.text = String(tvShow.voteCount)
         tvShowOverview.text = tvShow.overview
     }
+    
 
+}
+
+extension TvShowCustomCell: MoviesCustomCellDelegate {
+    func stopLoader() {
+        imageLoaderIndicator.stopLoading()
+    }
 }

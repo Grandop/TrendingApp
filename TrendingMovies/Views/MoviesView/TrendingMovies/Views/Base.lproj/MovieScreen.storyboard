@@ -39,6 +39,9 @@
                                                                 <constraint firstAttribute="height" constant="1" id="kkr-OP-iTe"/>
                                                             </constraints>
                                                         </view>
+                                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="1Lr-7J-Yje">
+                                                            <rect key="frame" x="75" y="116" width="20" height="20"/>
+                                                        </activityIndicatorView>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TA7-ve-lIq">
                                                             <rect key="frame" x="16" y="18" width="138" height="216"/>
                                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -147,9 +150,6 @@
                                                                 <constraint firstAttribute="height" constant="1" id="NST-qi-y64"/>
                                                             </constraints>
                                                         </view>
-                                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="1Lr-7J-Yje">
-                                                            <rect key="frame" x="75" y="116" width="20" height="20"/>
-                                                        </activityIndicatorView>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.0" green="0.61874936856121365" blue="0.98525506258010864" alpha="0.27509312913907286" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
@@ -247,7 +247,13 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qxk-vT-JSi" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Movies" id="yJ3-0t-ROz">
-                        <imageReference key="image" image="film" catalog="system" symbolScale="large"/>
+                        <imageReference key="image" image="film" catalog="system" renderingMode="hierarchical-single">
+                            <hierarchicalColors>
+                                <color red="0.65891492409999997" green="0.88506015999999998" blue="0.96611279250000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color systemColor="secondaryLabelColor"/>
+                                <color systemColor="tertiaryLabelColor"/>
+                            </hierarchicalColors>
+                        </imageReference>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="60u-hB-gsU">
@@ -272,6 +278,9 @@
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -280,6 +289,9 @@
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

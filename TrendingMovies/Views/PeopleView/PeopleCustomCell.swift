@@ -16,7 +16,6 @@ class PeopleCustomCell: UITableViewCell {
     @IBOutlet weak var department: UILabel!
     @IBOutlet weak var popularity: UILabel!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         background.layer.cornerRadius = 15

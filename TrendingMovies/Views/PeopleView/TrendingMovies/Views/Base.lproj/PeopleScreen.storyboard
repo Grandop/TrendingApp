@@ -199,8 +199,8 @@
         <scene sceneID="Mls-R7-yz6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7JS-ob-mzJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="People" id="VI9-Kw-iwF">
-                        <imageReference key="image" image="person" catalog="system" symbolScale="large"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="People" id="VI9-Kw-iwF">
+                        <imageReference key="image" image="person" catalog="system" symbolScale="large" renderingMode="hierarchical-single"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Qyc-xk-c7O">

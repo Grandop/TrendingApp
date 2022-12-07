@@ -39,6 +39,9 @@
                                                                 <constraint firstAttribute="width" relation="lessThanOrEqual" constant="171" id="w0n-0F-ZXW"/>
                                                             </constraints>
                                                         </view>
+                                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="m84-Ws-CVu">
+                                                            <rect key="frame" x="75" y="116" width="20" height="20"/>
+                                                        </activityIndicatorView>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vbc-C8-6kx">
                                                             <rect key="frame" x="16" y="18" width="138" height="216"/>
                                                             <constraints>
@@ -154,12 +157,16 @@
                                                         <constraint firstAttribute="trailing" secondItem="NbK-iZ-Ub7" secondAttribute="trailing" constant="74.329999999999998" id="Aoa-hj-b0R"/>
                                                         <constraint firstItem="v7P-e5-6cb" firstAttribute="top" secondItem="vbc-C8-6kx" secondAttribute="bottom" constant="15" id="Aqq-4q-gN9"/>
                                                         <constraint firstItem="wa5-zU-sBe" firstAttribute="top" secondItem="WrC-Zi-uES" secondAttribute="bottom" constant="10" id="CWl-Ot-HRL"/>
+                                                        <constraint firstItem="v7P-e5-6cb" firstAttribute="top" secondItem="m84-Ws-CVu" secondAttribute="bottom" constant="113" id="Grn-AK-ySo"/>
                                                         <constraint firstItem="vbc-C8-6kx" firstAttribute="top" secondItem="zzr-KV-a1k" secondAttribute="top" constant="18" id="HfW-d0-o6g"/>
+                                                        <constraint firstItem="m84-Ws-CVu" firstAttribute="top" secondItem="zzr-KV-a1k" secondAttribute="top" constant="116" id="Ih4-DQ-yoE"/>
+                                                        <constraint firstItem="NbK-iZ-Ub7" firstAttribute="leading" secondItem="m84-Ws-CVu" secondAttribute="trailing" constant="63" id="PXz-i5-8Vn"/>
                                                         <constraint firstItem="WrC-Zi-uES" firstAttribute="leading" secondItem="vbc-C8-6kx" secondAttribute="trailing" constant="4" id="SYj-Db-uIA"/>
                                                         <constraint firstItem="WrC-Zi-uES" firstAttribute="top" secondItem="vbc-C8-6kx" secondAttribute="top" id="VsQ-Eb-988"/>
                                                         <constraint firstAttribute="trailing" secondItem="wa5-zU-sBe" secondAttribute="trailing" constant="21" id="Wmu-CS-daY"/>
                                                         <constraint firstItem="gtT-Ch-T0D" firstAttribute="top" secondItem="NbK-iZ-Ub7" secondAttribute="bottom" constant="10" id="Z2G-pZ-qHU"/>
                                                         <constraint firstAttribute="bottom" secondItem="v7P-e5-6cb" secondAttribute="bottom" constant="25" id="ZZb-w8-dXq"/>
+                                                        <constraint firstItem="m84-Ws-CVu" firstAttribute="leading" secondItem="zzr-KV-a1k" secondAttribute="leading" constant="75" id="Zcz-eM-quE"/>
                                                         <constraint firstItem="vbc-C8-6kx" firstAttribute="leading" secondItem="zzr-KV-a1k" secondAttribute="leading" constant="16" id="c0a-Zn-F70"/>
                                                         <constraint firstItem="v7P-e5-6cb" firstAttribute="leading" secondItem="zzr-KV-a1k" secondAttribute="leading" constant="16" id="jqO-rJ-O9j"/>
                                                         <constraint firstAttribute="trailing" secondItem="gtT-Ch-T0D" secondAttribute="trailing" constant="21" id="oQo-bF-aG6"/>
@@ -181,6 +188,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="background" destination="zzr-KV-a1k" id="Lrj-Hb-BoU"/>
+                                            <outlet property="imageLoaderIndicator" destination="m84-Ws-CVu" id="ruK-fp-KIc"/>
                                             <outlet property="releaseDateTvShow" destination="3KX-xQ-dac" id="fNz-HO-3uI"/>
                                             <outlet property="tvShowName" destination="WrC-Zi-uES" id="qfA-UB-UTO"/>
                                             <outlet property="tvShowOverview" destination="v7P-e5-6cb" id="xJr-K9-KyM"/>
@@ -237,8 +245,8 @@
         <scene sceneID="XvF-rB-rtn">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vuC-OP-ImM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="TV Shows" id="Mmq-Zw-4t8">
-                        <imageReference key="image" image="tv" catalog="system" symbolScale="large"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="TV Shows" id="Mmq-Zw-4t8">
+                        <imageReference key="image" image="tv" catalog="system" symbolScale="large" renderingMode="hierarchical"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="9UH-Jy-A24">

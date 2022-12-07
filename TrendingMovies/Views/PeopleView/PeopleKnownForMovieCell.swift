@@ -24,7 +24,6 @@ class PeopleKnownForMovieCell: UITableViewCell {
     }
     
     func configPeopleKnownForMovie(knownFor: KnownForInfo) {
-        
         moviePoster.loadFrom(UrlAddress: knownFor.knownForMovieImgUrl)
         movieName.text = knownFor.title
         releaseDate.text = knownFor.formatReleaseDateKnownFor()
