@@ -9,8 +9,10 @@ import Foundation
 
 struct KnownForInfo: Codable {
     let title: String?
+    let name: String?
     let overview: String?
     let posterPath: String?
+    let firstAirDate: Date?
     let releaseDate: Date?
     let voteAverage: Double?
     let voteCount: Int?
@@ -22,14 +24,16 @@ struct KnownForInfo: Codable {
     
     enum CodingKeys: String, CodingKey {
         case title
+        case name
         case overview
+        case firstAirDate = "first_air_date"
         case posterPath = "poster_path"
         case releaseDate = "release_date"
         case voteAverage = "vote_average"
         case voteCount =  "vote_count"
     }
     
-    func formatReleaseDateKnownFor() -> String {
+    func formatReleaseDateKnownForMovie() -> String {
         let dateformat = DateFormatter()
         dateformat.dateFormat = "dd/MM/yyyy"
         
@@ -39,4 +43,16 @@ struct KnownForInfo: Codable {
             return ""
         }
     }
+    
+    func formatReleaseDateKnownForTvShow() -> String {
+        let dateformat = DateFormatter()
+        dateformat.dateFormat = "dd/MM/yyyy"
+        
+        if let firstAirDate = self.firstAirDate {
+            return dateformat.string(from: firstAirDate)
+        } else {
+            return ""
+        }
+    }
+
 }

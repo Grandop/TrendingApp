@@ -30,8 +30,17 @@ class PeopleKnownForMovieCell: UITableViewCell {
         moviePoster.loadFrom(UrlAddress: knownFor.knownForMovieImgUrl, completionHandler: {
             self.imageLoader.stopAnimating()
         })
+        
         movieName.text = knownFor.title
-        releaseDate.text = knownFor.formatReleaseDateKnownFor()
+        releaseDate.text = knownFor.formatReleaseDateKnownForMovie()
+    
+        if movieName.text == nil {
+            movieName.text = knownFor.name
+        }
+        
+        if  releaseDate.text == nil {
+            releaseDate.text = knownFor.formatReleaseDateKnownForTvShow()
+        }
         voteAverageLabel.text = String(knownFor.voteAverage ?? 0.0)
         voteCountLabel.text = String(knownFor.voteCount ?? 0)
         movieOverview.text = knownFor.overview
