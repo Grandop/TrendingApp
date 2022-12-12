@@ -17,6 +17,12 @@ class TvShowsController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setuptvShowsTableView()
+    }
+    
+    func setuptvShowsTableView() {
+        tvShowsTableView.register(UINib(nibName: "XibCustomCell", bundle: nil), forCellReuseIdentifier: "cell")
+        
         self.title = "Tv Shows"
         showLoading()
         setupStyleView()

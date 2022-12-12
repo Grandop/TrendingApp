@@ -17,11 +17,10 @@ extension MoviesController: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath) as! MoviesCustomCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! XibCustomCell
         
-        cell.configCell(movie: movies[indexPath.row])
-        
-        
+        cell.configCellMovie(movie: movies[indexPath.row])
+    
         return cell
         
     }

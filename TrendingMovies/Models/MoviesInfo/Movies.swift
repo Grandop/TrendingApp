@@ -17,7 +17,6 @@ struct Movies: Codable {
     let overview: String
     var imageURL: String {
         let imgURL = "https://image.tmdb.org/t/p/w500"
-        
         return imgURL + posterPath
     }
     

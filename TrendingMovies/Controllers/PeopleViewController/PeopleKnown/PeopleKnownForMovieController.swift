@@ -15,9 +15,16 @@ class PeopleKnownForMovieController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupPeopleKnownForTableView()
+    }
+    
+    func setupPeopleKnownForTableView() {
+        peopleKnownForTableView.register(UINib(nibName: "XibCustomCell", bundle: nil), forCellReuseIdentifier: "cell")
+        
         self.title = "Known For"
         peopleKnownForTableView.dataSource = self
     }
+    
     
 }
 // MARK: UITableViewDataSource
@@ -27,7 +34,7 @@ extension PeopleKnownForMovieController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "peopleKnownForMovie", for: indexPath) as! PeopleKnownForMovieCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! XibCustomCell
         
         cell.configPeopleKnownForMovie(knownFor: knownForInfo[indexPath.row])
         

@@ -8,7 +8,6 @@
 import UIKit
 
 class PeopleCustomCell: UITableViewCell {
-
     
     @IBOutlet weak var background: UIView!
     @IBOutlet weak var profileActor: UIImageView!

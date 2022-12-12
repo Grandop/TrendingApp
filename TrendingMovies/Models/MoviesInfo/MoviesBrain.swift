@@ -17,12 +17,14 @@ struct MoviesBrain {
     var delegate: MovieBrainDelegate?
     
     func getApi() {
+        print("olá")
         let url = URL(string: "https://api.themoviedb.org/3/trending/movie/week?api_key=d8ab08a45dfeb6ee6317a10b502a476a")
         
         if let url = url {
             let session = URLSession.shared
             
             let task = session.dataTask(with: url) { data, response, error in
+                print(response)
                 
                 if error == nil {
                     if data != nil {

@@ -16,7 +16,7 @@ extension TvShowsController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "tvShowCell", for: indexPath) as! TvShowCustomCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! XibCustomCell
         
         cell.tvShowConfigCell(tvShow: tvShows[indexPath.row])
         

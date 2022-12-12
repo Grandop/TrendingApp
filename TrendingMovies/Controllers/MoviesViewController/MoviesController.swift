@@ -17,6 +17,12 @@ class MoviesController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupMoviesTableView()
+    }
+    
+    func setupMoviesTableView() {
+        moviesTableView.register(UINib(nibName: "XibCustomCell", bundle: nil), forCellReuseIdentifier: "cell")
+        
         self.title = "Movies"
         showLoading()
         setupStyleView()
