@@ -18,6 +18,12 @@ class PeopleController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupPeopleTableView()
+    }
+    
+    func setupPeopleTableView() {
+        peopleTableView.register(UINib(nibName: "XibPeopleCell", bundle: nil), forCellReuseIdentifier: "peopleCell")
+        
         self.title = "People"
         showLoading()
         setupStyleView()

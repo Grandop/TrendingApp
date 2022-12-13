@@ -18,7 +18,7 @@ class TabBarController: UITabBarController {
         selectedIndex = initialIndex
     }
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        let index =  tabBar.items?.firstIndex(of: item) ?? 0
+        let index = tabBar.items?.firstIndex(of: item) ?? 0
         
         switch index {
         case 0:

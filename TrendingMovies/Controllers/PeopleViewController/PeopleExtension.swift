@@ -15,7 +15,7 @@ extension PeopleController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "peopleCell", for: indexPath) as! PeopleCustomCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "peopleCell", for: indexPath) as! XibPeopleCell
         
         cell.configPeopleCell(people: people[indexPath.row])
         
